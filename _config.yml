@@ -1,7 +1,7 @@
 name: Jovan Savic
 title: Jekyll Gulp Starter Kit
 markdown: redcarpet
-baseurl: beproductive-site
+baseurl: 
 highlighter: pygments # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 include: ["_pages"]
