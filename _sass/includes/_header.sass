@@ -1,0 +1,141 @@
+.mobile-header
+  display: none
+.site-header
+  height: 40px
+  background-color: white
+  border-bottom: 1px solid #f8f8f8
+  .mw-1000-px
+    display: flex
+    justify-content: space-between
+
+.header-logo
+  a
+    text-transform: lowercase
+    color:  $navigation-text-color
+    font-size: 20px
+    line-height: 40px
+    position: relative
+    transition: .3s
+    //background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%)
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      height: 2px
+      width: 0%
+      bottom: 0
+      transition: .3s
+      background: $navigation-text-color
+    &:hover
+      &:after
+        width: 100%
+
+
+.header-navigation
+  height: 40px
+  display: flex
+  justify-content: center
+  flex-direction: column
+  a
+    margin-right: 30px
+    text-transform: lowercase
+    font-size: 20px
+    color: $navigation-text-color
+    position: relative
+    &:last-child
+      margin-right: 0px
+      color: rgba(0,0,0,0.87)
+      &:after
+        background: rgba(0,0,0,0.87)
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      height: 2px
+      width: 0%
+      left: 0
+      transition: .3s
+      background: $navigation-text-color
+  a.current-page, a:hover
+    &:after
+      width: 100%
+.mobile-logo
+  display: none
+
+@media(max-width: 775px)
+  .header-logo, .header-navigation
+    display: none
+  .mobile-logo
+    display: block
+    float: right
+    margin-right: 10px
+    a
+      line-height: 40px
+      color: $navigation-text-color
+
+  .mobile-header
+    display: block
+    height: calc(100vh - 40px)
+    width: 80%
+    background-color: white
+    position: absolute
+    bottom: 0
+    top: 40px
+    z-index: 999
+    transform: translateX(-100%)
+    transition: 0.5s
+    border-right: 1px solid #f8f8f8
+    overflow: hidden
+    a
+      text-decoration: none
+      //width: 100%
+      font-size: 20px
+      display: block
+      padding-top: 8px
+      padding-bottom: 8px
+      text-align: left
+      padding-left: 20px
+      padding-right: 0
+      &.current-page
+        color: #575B5C
+    &.is-open
+      transform: translateX(0px)
+  //box-shadow: 0px 10px 10px grey
+
+
+  .mobile-nav-toggle
+    display: flex
+    position: relative
+    float: left
+    margin-left: 10px
+    height: 40px
+    width: 30px
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    span,
+    span::before,
+    span::after
+      transition: 0.1s
+      display: block
+      position: absolute
+      content: ""
+      background-color: $navigation-text-color
+      height: 3px
+      width: 100%
+    span::before
+      top: -8px
+    span::after
+      top: 8px
+    &.is-open span
+      background-color: transparent
+    &.is-open span::before
+      top: 0px
+      transform: rotate(45deg)
+      transition: 0.5s
+    &.is-open span::after
+      transform-origin: center
+      top: 0px
+      transform: rotate(-45deg)
+      transition: 0.5s
