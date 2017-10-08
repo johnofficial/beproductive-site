@@ -5,6 +5,7 @@ $(function() {
 	contactForm();
 	parallaxHero();
 	triggerAnimation();
+    testimonialsTrigger();
 
 });
 function mobileMenu(){
@@ -133,4 +134,29 @@ function triggerAnimation() {
 
     });
 
+}
+
+function testimonialsTrigger() {
+    $('.next, .prev').click(function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        var $this 			= $(this),
+            curActiveClient = $('.testimonials-wrap').find('.active'),
+            position		= $('.testimonials-wrap').children().index(curActiveClient),
+            clientNum 		= $('.testimonial').length;
+
+        if($this.hasClass('next')){
+            if(position < clientNum - 1){
+                $('.active').removeClass('active').next().addClass('active');
+            }else{
+                $('.testimonial').removeClass('active').first().addClass('active');
+            }
+        }else{
+            if(position == 0){
+                $('.testimonial').removeClass('active').last().addClass('active');
+            }else{
+                $('.active').removeClass('active').prev().addClass('active');
+            }
+        }
+    });
 }
