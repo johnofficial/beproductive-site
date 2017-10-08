@@ -1,9 +1,10 @@
 $(function() {
-window.scrollBy(0, -1);
-mobileMenu();
-//scrollMenu();
-contactForm();
-parallaxHero();
+	window.scrollBy(0, -1);
+	mobileMenu();
+	//scrollMenu();
+	contactForm();
+	parallaxHero();
+	triggerAnimation();
 
 });
 function mobileMenu(){
@@ -110,4 +111,26 @@ function parallaxHero() {
     $(".hero-section").mousemove(function(event) {
         $(".clouds").css({"-webkit-transform": "translate(-" +event.pageX/25+ "px, -"+event.pageY/25+"px)"});
     });
+}
+
+function triggerAnimation() {
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return (elemTop <= docViewBottom-100);
+    }
+
+    $(window).scroll(function () {
+        $('[animate]').each(function () {
+            if (isScrolledIntoView(this) === true) {
+                $(this).addClass('trigger-animation');
+            }
+        });
+
+    });
+
 }

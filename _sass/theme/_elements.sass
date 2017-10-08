@@ -6,9 +6,15 @@
   border-radius: 25px
   transition: .3s
   font-size: 16px
+  white-space: nowrap
   @media (max-width: 480px)
     font-size: 14px
-
+.small-blank-btn
+  white-space: nowrap
+  padding: 10px 20px 10px 20px
+  border-radius: 100px
+  transition: .3s
+  font-size: 20px
 
 .button.pink
   background: $hero-pink
@@ -22,4 +28,12 @@
   background: transparent
   &:hover
     background: $hero-pink
+    color: white
+
+.dark-blue
+  border: 2px solid $hero-blue-dark
+  color: $hero-blue-dark
+  background: transparent
+  &:hover
+    background: $hero-blue-dark
     color: white

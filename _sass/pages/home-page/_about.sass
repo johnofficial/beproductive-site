@@ -1,0 +1,41 @@
+.about-section
+  padding-top: 50px
+  padding-bottom: 50px
+  overflow: hidden
+  position: relative
+.about-section-wrap
+  max-width: 690px
+  overflow: hidden
+  display: flex
+  justify-content: space-between
+.text-container
+  width: 55%
+  p
+    margin-bottom: 30px
+    opacity: 0
+    transform: translateY(10%)
+    transition: 4s
+    &.trigger-animation
+      opacity: 1
+      transform: translateY(0%)
+  a
+    opacity: 0
+    &.trigger-animation
+      opacity: 1
+.img-container
+  img
+    width: 200px
+    transform: translateX(100%)
+    transition: 2s
+  .trigger-animation
+    transform: translateX(0%)
+
+@media (max-width: 480px)
+  .img-container
+    position: relative
+    min-height: 363px
+    img
+      position: absolute
+      right: -120px
+  .text-container
+    width: 70%
