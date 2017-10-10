@@ -402,6 +402,7 @@ h3.title.trigger-animation:before {
   position: relative; }
 
 .about-section-wrap {
+  padding-bottom: 40px;
   max-width: 690px;
   overflow: hidden;
   display: -ms-flexbox;
@@ -444,7 +445,9 @@ h3.title.trigger-animation:before {
       position: absolute;
       right: -120px; }
   .text-container {
-    width: 70%; } }
+    width: 70%; }
+    .text-container p {
+      font-size: 18px; } }
 
 .advantages-section {
   overflow: hidden;
