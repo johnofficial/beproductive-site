@@ -265,6 +265,50 @@ h3.title.trigger-animation:before {
               transform: rotate(-45deg);
       transition: 0.5s; } }
 
+.site-footer {
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(to top, #39DFA4 0%, #39C2E2 100%); }
+
+.footer-wrap {
+  padding-top: 60px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .footer-wrap .logo {
+    display: -ms-flexbox;
+    display: flex; }
+    .footer-wrap .logo img {
+      width: 80px;
+      height: 80px; }
+    .footer-wrap .logo p {
+      color: white;
+      font-size: 32px;
+      font-family: "Zilla Slab";
+      line-height: 80px;
+      margin: 0 0 0 20px;
+      padding: 0; }
+  .footer-wrap .links img {
+    width: 60px;
+    margin: 10px; }
+
+@media (max-width: 600px) {
+  .site-footer {
+    height: 120px; }
+  .footer-wrap {
+    padding-top: 40px; }
+    .footer-wrap .logo img {
+      width: 40px;
+      height: 40px; }
+    .footer-wrap .logo p {
+      font-size: 20px;
+      line-height: 40px;
+      margin-left: 10px; }
+    .footer-wrap .links img {
+      width: 30px;
+      margin: 2px; } }
+
 .hero-section {
   width: 100%;
   min-height: 100vh;
